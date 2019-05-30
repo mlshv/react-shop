@@ -1,36 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-
-import Card from '@material-ui/core/Card';
-import Button from '@material-ui/core/Button';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import styles from './Catalog.module.css';
 import { Pagination } from '../Pagination';
-
-const ProductCard = ({ title, price, description, onAddToCart }) => (
-  <Card className={styles.card}>
-    <CardContent>
-      <Typography variant="h6" color="textPrimary" component="h2">
-        {title}
-      </Typography>
-      <Typography variant="body1" color="textPrimary" component="p">
-        ${price}
-      </Typography>
-      <Typography variant="body2" color="textSecondary" component="p">
-        {description}
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small" color="primary" onClick={onAddToCart}>
-        <AddShoppingCartIcon className={styles.actionIcon} fontSize="small" />{' '}
-        Add to cart
-      </Button>
-    </CardActions>
-  </Card>
-);
+import { ProductCard } from '../ProductCard';
 
 const Catalog = ({
   products = [],

@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import Catalog from '../../components/Catalog/Catalog';
 import { useCartActions } from '../../hooks/cart';
+import useProducts from '../../hooks/useProducts';
 
 const LIMIT = 12;
 
@@ -26,7 +26,7 @@ const usePagination = (items = [], limit = LIMIT) => {
 };
 
 const CatalogContainer = () => {
-  const allProducts = useSelector(state => state.products);
+  const allProducts = useProducts();
   const [products, page, goToNext, goToPrev] = usePagination(allProducts);
   const { add } = useCartActions();
 
