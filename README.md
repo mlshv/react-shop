@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Тестовое задание
 
-## Available Scripts
+## Что нужно сделать
 
-In the project directory, you can run:
+### Страница с товарами
+Отображение товаров плиткой по 12 на странице с пагинацией.
 
-### `npm start`
+В товаре отображаем наименование, описание, цену, кнопку “buy”. При каждом клике на “buy” в корзину добавляется 1 единица товара.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Вверху на странице, если корзина не пустая, отображается бейдж корзины с указанием количества товаров. При клике на бейдж осуществляется переход на страницу корзины.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Корзина
+Отображение товаров в корзине, с указанием количества каждого товара, суммы по каждому товару и общей суммы. Предусмотреть возможность изменения количества товаров, в том числе удаление товара.
 
-### `npm test`
+Внизу страницы располагается кнопка “checkout”, активна при непустой корзине. При клике на нее осуществляется переход на страницу оформления заказа
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Оформление заказа
+Отображение формы оформления заказа. 
 
-### `npm run build`
+Присутствуют поля name, email, phone. Внизу располагается копка “submit”, изначально неактивная.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+В случае невалидности одного или нескольких полей, подсвечиваем их, выводим подсказку. Все поля обязательны для заполнения, name не менее 4 символов, phone предполагаем только российские номера. 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+В случае валидности всех полей делаем кнопку “submit” активной.  При нажатии на “submit” очищаем корзину, отображаем надпись “Thank you!” и кнопку “back”. При нажатии на “back” возвращаем пользователя на страницу с товарами. Данные никуда отправлять не требуется. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Что можно было бы сделать дополнительно
+Сохранение состояния пагинации в адресной строке, для этого можно использовать [supasate/connected-react-router](https://github.com/supasate/connected-react-router).
