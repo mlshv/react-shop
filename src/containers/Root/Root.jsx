@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import { HeaderContainer } from '../Header';
 import { CatalogContainer } from '../Catalog';
 import { CartContainer } from '../Cart';
+import { CheckoutContainer } from '../Checkout';
 
 const useProductsLoad = () => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={CatalogContainer} />
         <Route path="/cart" component={CartContainer} />
-        {/* <Route path="/checkout" component={CheckoutContainer} /> */}
+        <Route path="/checkout" component={CheckoutContainer} />
       </Switch>
     </React.Fragment>
   );

@@ -2,6 +2,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Pagination } from '../Pagination';
 import { ProductCard } from '../ProductCard';
+import { Page } from '../Page';
+import styles from './Catalog.module.css';
 
 const Catalog = ({
   products = [],
@@ -11,7 +13,7 @@ const Catalog = ({
   onAddToCart
 }) =>
   products.length ? (
-    <div style={{ padding: 10 }}>
+    <Page>
       <Pagination
         page={page}
         onRequestNextPage={onRequestNextPage}
@@ -29,12 +31,14 @@ const Catalog = ({
           </Grid>
         ))}
       </Grid>
-      <Pagination
-        page={page}
-        onRequestNextPage={onRequestNextPage}
-        onRequestPrevPage={onRequestPrevPage}
-      />
-    </div>
+      <div className={styles.bottomPagination}>
+        <Pagination
+          page={page}
+          onRequestNextPage={onRequestNextPage}
+          onRequestPrevPage={onRequestPrevPage}
+        />
+      </div>
+    </Page>
   ) : null;
 
 export default Catalog;

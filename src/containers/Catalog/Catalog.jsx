@@ -17,7 +17,7 @@ const usePagination = (items = [], limit = LIMIT) => {
   };
 
   const goToPrev = () => {
-    if (page > 0) {
+    if (page > 1) {
       setPage(page - 1);
     }
   };

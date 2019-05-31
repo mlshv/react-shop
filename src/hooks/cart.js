@@ -27,14 +27,18 @@ export const useCartActions = () => {
   };
 
   const incrementCount = productId => {
-    dispatch({ type: 'cart/INCREEMENT_COUNT', payload: productId });
+    dispatch({ type: 'cart/INCREMENT_COUNT', payload: productId });
   };
 
   const decrementCount = productId => {
-    dispatch({ type: 'cart/DECREEMENT_COUNT', payload: productId });
+    dispatch({ type: 'cart/DECREMENT_COUNT', payload: productId });
+  };
+
+  const clear = () => {
+    dispatch({ type: 'cart/CLEAR' });
   };
 
   preserveCartState(cartState);
 
-  return { add, remove, incrementCount, decrementCount };
+  return { add, remove, clear, incrementCount, decrementCount };
 };
